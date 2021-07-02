@@ -90,7 +90,7 @@
 		</table>
 		<div>
 		<div style="width: 1103px; display: inline-block;"></div>
-		<input type="button" class="new" onclick="location.href='PostInsert.jsp?id=<%= boardId %>'" value="신규">
+		<button class="new" onclick="location.href='PostInsert.jsp?id=<%= boardId %>'">신규</button>
 		</div>
 		<div>
 			<br>

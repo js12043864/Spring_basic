@@ -28,6 +28,10 @@
 		<div id="navigation">
 			<a href="PostTable.jsp?id=<%= boardId %>&from=1" id="navi"><h1><%= name %></h1></a>
 		</div>
+		<div style="display: inline-block; position:absolute; left:605px;">
+		<span id=key>"<%= keyWord %>"검색결과</span>
+		</div>
+		<br>
 		<table>
 			<tr>
 				<td class="Id"><b>번호</b></td>

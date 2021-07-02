@@ -33,7 +33,7 @@ public class BoardDaoImpl implements BoardDao {
 	public Board selectOne(int id) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from board where id = " + id + ";");
 		Board board = new Board();
@@ -48,7 +48,7 @@ public class BoardDaoImpl implements BoardDao {
 	public List<Board> selectAll() throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from board order by id;");
 		List<Board> showBoard = new ArrayList<Board>();

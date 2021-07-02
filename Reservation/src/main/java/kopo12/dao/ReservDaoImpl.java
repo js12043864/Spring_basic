@@ -25,7 +25,7 @@ public class ReservDaoImpl implements ReservDao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 			Statement stmt = conn.createStatement();
 			stmt.execute("insert into reservation values(\"" + reservation.getName() + "\",\"" + reservation.getResv_date() + "\", " 
 					+ reservation.getRoom() + ",\"" + reservation.getAddr() + "\", \"" + reservation.getTelnum() + "\", \"" + reservation.getIn_name()
@@ -43,7 +43,7 @@ public class ReservDaoImpl implements ReservDao{
 		Reservation reservation = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 			Statement stmt = conn.createStatement();
 			ResultSet rset = stmt.executeQuery("select * from reservation where resv_date = \"" + resv_date + "\" and room = " + room + ";");
 			reservation = new Reservation();
@@ -73,7 +73,7 @@ public class ReservDaoImpl implements ReservDao{
 		List<Reservation> showReserv = null;
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from reservation where resv_date = \"" + resv_date + "\" and room = " + room + ";");
 		showReserv = new ArrayList<Reservation>();
@@ -103,7 +103,7 @@ public class ReservDaoImpl implements ReservDao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 			Statement stmt = conn.createStatement();
 			stmt.execute("update reservation Set addr=\"" + reservation.getAddr() + "\", telnum=\"" + reservation.getTelnum() + "\", in_name=\"" + reservation.getIn_name() 
 					+ "\", comment=\"" + reservation.getComment() + "\", write_date=now() where resv_date = \"" + reservation.getResv_date() + "\" and room = " + reservation.getRoom() + ";");
@@ -119,7 +119,7 @@ public class ReservDaoImpl implements ReservDao{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 			Statement stmt = conn.createStatement();
 			stmt.execute("delete from reservation where resv_date = \"" + reservation.getResv_date() + "\" and room = " + reservation.getRoom() + ";");
 			stmt.close();

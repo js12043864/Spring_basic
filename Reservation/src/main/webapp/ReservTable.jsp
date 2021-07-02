@@ -50,7 +50,7 @@
 			<c:set var="check" value="${showData.get(2)}" />
 				<c:choose>
 				    <c:when test="${check eq '예약가능'}">
-				        <td><a href=Reserve.jsp?date=${showData.get(0)}&room=${showData.get(1)}><c:out value="예약하기"/></a></td>
+				        <td><a href=Reserve.jsp?date=${showData.get(0)}&room=${showData.get(1)} style="text-decoration:none; color:black;"><c:out value="${showData.get(2)}"/></a></td>
 				    </c:when>
 				    <c:otherwise>
 				        <td><a href=ReservView.jsp?date=${showData.get(0)}&room=${showData.get(1)}><c:out value="${showData.get(2)}"/></a></td>
@@ -59,7 +59,7 @@
 			<c:set var="check" value="${showData.get(4)}" />
 				<c:choose>
 				    <c:when test="${check eq '예약가능'}">
-				        <td><a href=Reserve.jsp?date=${showData.get(0)}&room=${showData.get(3)}><c:out value="예약하기"/></a></td>
+				        <td><a href=Reserve.jsp?date=${showData.get(0)}&room=${showData.get(3)} style="text-decoration:none; color:black;"><c:out value="${showData.get(4)}"/></a></td>
 				    </c:when>
 				    <c:otherwise>
 				        <td><a href=ReservView.jsp?date=${showData.get(0)}&room=${showData.get(3)}><c:out value="${showData.get(4)}"/></a></td>
@@ -68,7 +68,7 @@
 			<c:set var="check" value="${showData.get(6)}" />
 				<c:choose>
 				    <c:when test="${check eq '예약가능'}">
-				        <td><a href=Reserve.jsp?date=${showData.get(0)}&room=${showData.get(5)}><c:out value="예약하기"/></a></td>
+				        <td><a href=Reserve.jsp?date=${showData.get(0)}&room=${showData.get(5)} style="text-decoration:none; color:black;"><c:out value="${showData.get(6)}"/></a></td>
 				    </c:when>
 				    <c:otherwise>
 				        <td><a href=ReservView.jsp?date=${showData.get(0)}&room=${showData.get(5)}><c:out value="${showData.get(6)}"/></a></td>
@@ -77,7 +77,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-	</center>
+
 	</div>
 </body>
 </html>

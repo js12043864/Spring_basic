@@ -59,9 +59,9 @@
 			<td><input type="text" name="comment" value=${reservation.comment}></td>
 		</tr>	
 	</table>
+	<input type="button" id="cancel" onclick="location.href='ReservView.jsp?date=<%= date %>&room=<%= room %>'" value="취소">
 	<input type="submit" id="change" value="예약변경">
 	</form>
-	<input type="button" id="cancel" onclick="cancel()" value="취소">
 	<center>
 </body>
 <script>

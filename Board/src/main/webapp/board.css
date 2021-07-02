@@ -2,6 +2,7 @@
     margin-left: 600px; 
 }
 
+
 table,td {
     border: 2px solid #3C8DAD;
     border-collapse: collapse;
@@ -17,7 +18,7 @@ table,td {
     padding: 0 30px;
     color: #fff;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     font-weight: bold;
     line-height: 40px;
     border: 1px solid transparent;
@@ -92,7 +93,7 @@ table,td {
     height: 38px;
     color: #fff;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     font-weight: bold;
     line-height: 35px;
     border: 1px solid transparent;
@@ -105,7 +106,7 @@ table,td {
     height: 38px;
     color: #fff;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     font-weight: bold;
     line-height: 35px;
     border: 1px solid transparent;
@@ -120,7 +121,7 @@ table,td {
     padding: 0 30px;
     color: #fff;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     font-weight: bold;
     line-height: 40px;
     border: 1px solid transparent;
@@ -130,7 +131,7 @@ table,td {
 .option {
     text-align: center;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     font-weight: bold;
     width: 200px;
 }
@@ -139,7 +140,7 @@ table,td {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     width: 400px;
 }
 
@@ -173,7 +174,7 @@ textarea:focus {
     padding-bottom : 10px;
     color: #fff;
     font-size: 16px;
-    font-family: "ë§‘ì€ ê³ ë”•", Malgun Gothic, sans-serif;
+    font-family: "¸¼Àº°íµñ", Malgun Gothic, sans-serif;
     font-weight: bold;
     line-height: 20px;
     border: 1px solid transparent;

@@ -16,7 +16,7 @@ public class HuboDaoImpl implements HuboDao {
 	public void create(Hubo hubo) throws Exception {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.103.16:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from hubo_table order by id;");
 		int num = 0;
@@ -32,7 +32,7 @@ public class HuboDaoImpl implements HuboDao {
 	@Override
 	public Hubo selectOne(int id) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from hubo_table where id = " + id + ";");
 		Hubo hubo = new Hubo();
@@ -52,7 +52,7 @@ public class HuboDaoImpl implements HuboDao {
 	public List<Hubo> selectAll() throws Exception {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from hubo_table order by id;");
 		List<Hubo> showHubo = new ArrayList<Hubo>();
@@ -80,7 +80,7 @@ public class HuboDaoImpl implements HuboDao {
 	public void delete(Hubo hubo) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		stmt.execute("delete from tupyo_table where id = \"" + hubo.getId() + "\";");
 		stmt.execute("delete from hubo_table where id = \"" + hubo.getId() + "\";");

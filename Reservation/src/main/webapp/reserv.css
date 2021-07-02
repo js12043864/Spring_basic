@@ -5,6 +5,14 @@ table, th, td {
 	padding: 5px 0px 5px 0px;
 	font-size: 1.2em;
 }
+.can{
+	text-decoration: none;
+    color : black;
+}
+.can a{
+	text-decoration: none;
+    color : black;
+}
 
 table {
 	width: 1000px;
@@ -90,6 +98,6 @@ table {
     background-color: #125D98;
 }
 .input {
-	
+	height: 50px;
 }
 

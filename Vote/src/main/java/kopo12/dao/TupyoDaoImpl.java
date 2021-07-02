@@ -27,7 +27,7 @@ public class TupyoDaoImpl implements TupyoDao {
 	public void create(Tupyo tupyo) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.jdbc.Driver");	
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		stmt.execute("insert into tupyo_table (id, age) values(" + tupyo.getId() + "," + tupyo.getAge() + ");");
 		stmt.close();
@@ -43,7 +43,7 @@ public class TupyoDaoImpl implements TupyoDao {
 	public List<Tupyo> selectAll(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from tupyo_table where id = " + id + ";");
 		List<Tupyo> showTupyo = new ArrayList<Tupyo>();
@@ -75,7 +75,7 @@ public class TupyoDaoImpl implements TupyoDao {
 	public List<Tupyo> selectAll() throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.16:3306/kopoctc", "root", "kopoctc");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from tupyo_table;");
 		List<Tupyo> showTupyo = new ArrayList<Tupyo>();
