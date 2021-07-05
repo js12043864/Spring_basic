@@ -12,4 +12,5 @@ public interface BoardItemService {
 	List<BoardItem> selectAll(int boardId) throws ClassNotFoundException, SQLException;
 	BoardItem selectOne(int id) throws ClassNotFoundException, SQLException;
 	int[] number(List<BoardItem> boardItemList, int from);
+	String date();
 }

@@ -10,19 +10,9 @@
 		<link href="/SpringBoard/resources/board.css?after" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<%
-		request.setCharacterEncoding("utf-8");
-		int boardId = Integer.parseInt(request.getParameter("id"));
-		BoardService boardService = BoardServiceImpl.getInstance();
-		Board board = boardService.selectOne(boardId);
-		String name = board.getTitle();
-        Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(cal.getTime());
-		%>
-		<div id="navigation"><a href="PostTable.jsp?id=<%= boardId %>&from=1" id="navi"><h1><%= name %></h1></a></div>
+		<div id="navigation"><a href="PostTable?id=${boardId}&from=1" id="navi"><h1>${name}</h1></a></div>
 		<br>
-		<form method="post" action="PostWrite.jsp?id=<%= boardId %>">
+		<form method="post" action="PostWrite?id=${boardId}">
 			<table>
 				<tr>
 					<td class="option">번호</td>
@@ -34,7 +24,7 @@
 				</tr>
 				<tr>
 					<td class="option">일자</td>
-					<td class="content"><span name="date"><%= date%></span></td>
+					<td class="content"><span name="date">${date}</span></td>
 				</tr>
 				<tr>
 					<td class="option">내용</td>
@@ -44,7 +34,7 @@
 			</table>
 			<div>
 			<div style="width: 960px; display: inline-block;"></div>
-			<input type="button" class="cancel" onclick="location.href='PostTable.jsp?id=<%= boardId %>&from=1'" value="취소">
+			<input type="button" class="cancel" onclick="location.href='PostTable?id=${boardId}&from=1'" value="취소">
 			<input type="submit" class="write" value="쓰기">
 			</div>
 		</form>

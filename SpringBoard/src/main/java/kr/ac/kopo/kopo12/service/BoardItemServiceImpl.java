@@ -1,6 +1,8 @@
 package kr.ac.kopo.kopo12.service;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +72,15 @@ public class BoardItemServiceImpl implements BoardItemService {
 		}
 		int[] number = {startNum,endNum,prPage, finPage, from};
 		return number;
+	}
+
+	@Override
+	public String date() {
+		// TODO Auto-generated method stub
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(cal.getTime());
+		return date;
 	}
 
 }

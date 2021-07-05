@@ -21,12 +21,12 @@ $( document).ready(function() {
 </script>
 </head>
 <body>
-	<%
+	<%-- <%
 	int boardId = 1;
 	BoardItemService boardItemService = BoardItemServiceImpl.getInstance();
 	List<BoardItem> boardItems = boardItemService.selectAll(boardId);
 	request.setAttribute("boardItems", boardItems);
-	%>
+	%> --%>
 	<c:out value="hello world" />
 	
 	<c:forEach var="boardItem" items="${boardItems}">

@@ -5,32 +5,18 @@
 <%@ page import="kr.ac.kopo.kopo12.service.*" %>
 <%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<link href="/SpringBoard/resources/board.css?after" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<%
-		request.setCharacterEncoding("utf-8");
-		int boardId = Integer.parseInt(request.getParameter("boardId"));
-		BoardService boardService = BoardServiceImpl.getInstance();
-		Board board = boardService.selectOne(boardId);
-		String name = board.getTitle();
-		
-		String keyWord = request.getParameter("keyWord");
-		if(keyWord.contains("<")){
-			keyWord = keyWord.replaceAll("<", "&lt;");
-		}
-		String[] spKeyWord = keyWord.split(" ");
-		BoardItemService boardItemService = BoardItemServiceImpl.getInstance();
-		List<BoardItem> boardItemList = boardItemService.selectAll(boardId);
-		%>
 		<div id="navigation">
-			<a href="PostTable.jsp?id=<%= boardId %>&from=1" id="navi"><h1><%= name %></h1></a>
+			<a href="PostTable?id=${boardId}&from=1" id="navi"><h1>${name}</h1></a>
 		</div>
 		<div style="display: inline-block; position:absolute; left:605px;">
-		<span id=key>"<%= keyWord %>"검색결과</span>
+		<span id=key>"${keyWord}"검색결과</span>
 		</div>
 		<br>
 		<table>
@@ -39,18 +25,18 @@
 				<td class="Ttl"><b>제목</b></td>
 				<td class="day"><b>등록일</b></td>
 			</tr>
-			<%
-			int boardItemSize = boardItemList.size();
-			int cnt = 1;
-			for(BoardItem boardItem : boardItemList){
-				HashSet<Integer> hash = new HashSet<Integer>();
-				for(String key : spKeyWord){
-					if(boardItem.getContent().contains(key) || boardItem.getTitle().contains(key)){
-						hash.add(boardItem.getId());
-					}
-				}
-				Iterator it = hash.iterator();
-				
+			<c:forEach var="boardItemList" items="${boardItemList}">
+			
+				<c:forEach var="iterator" items="${iterator}">
+				<c:set var="i" value="${i+1}"></c:set>
+					<tr>
+						<td class=num>${i}</td>
+						<td class=title><a href=PostView?id=${iterator}&boardId=${boardId} id=movePage>${boardItemList.title}</a></td>
+						<td class=date>${boardItem.date}</td>
+					</tr>
+				</c:forEach>
+			</c:forEach>
+			<%-- <%
 				while(it.hasNext()){
 				out.print("<tr>" +
 								"<td class=num>" +
@@ -67,6 +53,6 @@
 				}
 				cnt++;
 			}
-			%>
+			%> --%>
 	</body>
 </html>

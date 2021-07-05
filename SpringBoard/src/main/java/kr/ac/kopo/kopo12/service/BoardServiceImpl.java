@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.ac.kopo.kopo12.dao.BoardItemRepository;
 import kr.ac.kopo.kopo12.dao.BoardRepository;
 import kr.ac.kopo.kopo12.domain.Board;
 

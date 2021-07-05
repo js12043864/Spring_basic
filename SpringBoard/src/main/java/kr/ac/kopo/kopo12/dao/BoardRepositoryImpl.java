@@ -24,7 +24,7 @@ public class BoardRepositoryImpl implements BoardRepository {
 	@Override
 	public Board selectOne(int id) throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from board where id = " + id + ";");
@@ -39,7 +39,7 @@ public class BoardRepositoryImpl implements BoardRepository {
 	@Override
 	public List<Board> selectAll() throws SQLException, ClassNotFoundException {
 		// TODO Auto-generated method stub
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.23.103:3306/kopoctc", "root", "kopoctc");
 		Statement stmt = conn.createStatement();
 		ResultSet rset = stmt.executeQuery("select * from board order by id;");

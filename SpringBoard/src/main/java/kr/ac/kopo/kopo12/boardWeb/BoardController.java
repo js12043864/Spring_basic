@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.kopo12.domain.Board;
-import kr.ac.kopo.kopo12.service.BoardItemService;
 import kr.ac.kopo.kopo12.service.BoardService;
 
 @Controller	//annotation
@@ -21,8 +20,6 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;	//new로 할필요없다 . autowired하면 된다-> DI(의존성) for 느슨하게하기위해
 
-	@Autowired
-	private BoardItemService boardItemService;
 	
 	@RequestMapping(value = "/boardSelect")
 	public String boardSelect(Model model) throws ClassNotFoundException, SQLException {
@@ -31,5 +28,6 @@ public class BoardController {
 //		model.addAttribute("name", "홍길동");	//key , value
 		return "boardSelect";	//이것으로 대응하겠다. [1]
 	}
+	
 
 }
